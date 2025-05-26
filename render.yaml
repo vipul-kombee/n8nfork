@@ -6,32 +6,32 @@ services:
     image:
       url: docker.io/n8nio/n8n:latest
 
-    envVars:
-      - key: N8N_ENCRYPTION_KEY
-        generateValue: true
+envVars:
+  - key: N8N_ENCRYPTION_KEY
+    generateValue: true
+  - key: DB_TYPE
+    value: postgresdb
+  - key: DB_POSTGRESDB_DATABASE
+    value: n8n_database_rik5
+  - key: DB_POSTGRESDB_HOST
+    value: dpg-d0q57eje5dus73edu91g-a
+  - key: DB_POSTGRESDB_PORT
+    value: "5432"
+  - key: DB_POSTGRESDB_USER
+    value: n8n_database_rik5_user
+  - key: DB_POSTGRESDB_PASSWORD
+    value: C8lLOYIyBy9WC5Cnkp0uC5pEscyrmU3t
+  - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+    value: "true"
+  - key: N8N_BASIC_AUTH_ACTIVE
+    value: "true"
+  - key: N8N_BASIC_AUTH_USER
+    value: admin
+  - key: N8N_BASIC_AUTH_PASSWORD
+    value: securepassword123
+  - key: WEBHOOK_URL
+    value: https://n8n-service.onrender.com
 
-      - key: DB_TYPE
-        value: postgresdb
-      - key: DB_POSTGRESDB_DATABASE
-        value: n8n_database_rik5
-      - key: DB_POSTGRESDB_HOST
-        value: dpg-d0q57eje5dus73edu91g-a
-      - key: DB_POSTGRESDB_PORT
-        value: "5432"
-      - key: DB_POSTGRESDB_USER
-        value: n8n_database_rik5_user
-      - key: DB_POSTGRESDB_PASSWORD
-        value: C8lLOYIyBy9WC5Cnkp0uC5pEscyrmU3t
-      - key: GENERIC_TIMEZONE
-        value: Asia/Kolkata
-      - key: N8N_BASIC_AUTH_ACTIVE
-        value: "true"
-      - key: N8N_BASIC_AUTH_USER
-        value: admin
-      - key: N8N_BASIC_AUTH_PASSWORD
-        value: securepassword123
-      - key: WEBHOOK_URL
-        value: https://n8n-service.onrender.com
 
 databases:
   - name: n8n-db
